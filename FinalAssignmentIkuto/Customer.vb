@@ -6,13 +6,7 @@
     Property BankAccount As String
     Property Address As String
     Property Email As String
-    Property CreatedAt As Date
-    Property UpdatedAt As Date
     Const CONNECT_STRING = ""
-
-    Sub New()
-
-    End Sub
 
     Shared Function findAll() As ArrayList
         Dim npgsqlConnection As New Npgsql.NpgsqlConnection
