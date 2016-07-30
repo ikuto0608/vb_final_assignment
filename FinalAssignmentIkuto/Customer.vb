@@ -6,11 +6,10 @@
     Property BankAccount As String
     Property Address As String
     Property Email As String
-    Const CONNECT_STRING = ""
 
     Shared Function findAll() As ArrayList
         Dim npgsqlConnection As New Npgsql.NpgsqlConnection
-        npgsqlConnection.ConnectionString = CONNECT_STRING
+        npgsqlConnection.ConnectionString = System.Environment.GetEnvironmentVariable("CONNECT_STRING")
         npgsqlConnection.Open()
 
         Dim command As New Npgsql.NpgsqlCommand
@@ -38,7 +37,7 @@
 
     Shared Function findByID(ByVal id) As Customer
         Dim npgsqlConnection As New Npgsql.NpgsqlConnection
-        npgsqlConnection.ConnectionString = CONNECT_STRING
+        npgsqlConnection.ConnectionString = System.Environment.GetEnvironmentVariable("CONNECT_STRING")
         npgsqlConnection.Open()
 
         Dim command As New Npgsql.NpgsqlCommand
@@ -63,7 +62,7 @@
 
     Shared Function where(ByVal keyword As String) As ArrayList
         Dim npgsqlConnection As New Npgsql.NpgsqlConnection
-        npgsqlConnection.ConnectionString = CONNECT_STRING
+        npgsqlConnection.ConnectionString = System.Environment.GetEnvironmentVariable("CONNECT_STRING")
         npgsqlConnection.Open()
 
         Dim command As New Npgsql.NpgsqlCommand
@@ -91,7 +90,7 @@
 
     Function save() As Boolean
         Dim npgsqlConnection As New Npgsql.NpgsqlConnection
-        npgsqlConnection.ConnectionString = CONNECT_STRING
+        npgsqlConnection.ConnectionString = System.Environment.GetEnvironmentVariable("CONNECT_STRING")
         npgsqlConnection.Open()
 
         Dim command As New Npgsql.NpgsqlCommand
@@ -104,7 +103,7 @@
 
     Function create() As Boolean
         Dim npgsqlConnection As New Npgsql.NpgsqlConnection
-        npgsqlConnection.ConnectionString = CONNECT_STRING
+        npgsqlConnection.ConnectionString = System.Environment.GetEnvironmentVariable("CONNECT_STRING")
         npgsqlConnection.Open()
 
         Dim command As New Npgsql.NpgsqlCommand
@@ -117,7 +116,7 @@
 
     Function destroy() As Boolean
         Dim npgsqlConnection As New Npgsql.NpgsqlConnection
-        npgsqlConnection.ConnectionString = CONNECT_STRING
+        npgsqlConnection.ConnectionString = System.Environment.GetEnvironmentVariable("CONNECT_STRING")
         npgsqlConnection.Open()
 
         Dim command As New Npgsql.NpgsqlCommand
